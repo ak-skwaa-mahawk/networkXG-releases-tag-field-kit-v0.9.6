@@ -1,0 +1,10 @@
+# Headscale config for BushRouter mesh
+server_url: https://headscale.yukonflats.anchor
+listen_addr: 0.0.0.0:8080
+private_key_path: /var/lib/headscale/private.key
+derp:
+  server:
+    enabled: true
+    region_id: 999
+    region_code: "yukonflats"
+    region_name: "Yukon Flats Physical Anchor"
