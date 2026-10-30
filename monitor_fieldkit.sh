@@ -2,7 +2,8 @@
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 cd "$DIR"
 
-echo "[*] Checking field kit services..."
+echo "=== $(date -u +"%Y-%m-%d %H:%M:%S UTC") ===
+[*] Checking field kit services..."
 PORTS=(8080 50051 8766 50055)
 MISSING=0
 
