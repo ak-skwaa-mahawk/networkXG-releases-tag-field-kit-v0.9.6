@@ -8,13 +8,15 @@
   },
   "runtime_state": {
     "branch": "main",
-    "commit": "29995ec8e9d1ec16b967508108675a9bbe7b3e20",
-    "active_release_tag": "v0.9.8",
+    "commit": "d82078aa0c66853241649ba66b0f4c85036f2332",
+    "active_release_tag": "v0.9.9",
     "operational_seal_hash": "c5eb790f6bc143c4adae4209688566a9c3ee223df94d733b1a9cab690cf57c36",
-    "cold_archive_hash": "57f1fa0ebe4103d39fd71a79cd28a2ce0e91df5cef6fdd47fbba757f72ac140d",
+    "cold_archive_hash": "1a51712388fd5de3b207844bcb9d00f443a89dcaaa6310daef4d74dc84cd34fe",
     "xrpl_replay_wallet": "rwnYLUsoBQX3ECa1A5bSKLdbPoHKnqf63J",
-    "watchdog_service": "crond (runit pid verified, 5m schedule active)"
+    "watchdog_service": "crond (runit pid 6412, 5m schedule active)",
+    "physics_fixtures": "REP_PHYS_001 (symplectic zero-crossing validated)",
+    "dynamic_router": "ctypes Q32.32 continuous lambda-slider fused"
   },
-  "signed_timestamp_utc": "2026-10-30T09:16:42.012034+00:00",
-  "terminal_sha256": "3508aac7c4e3e15c862cfedb91757e5d4b44ae0a7385ac69a7c045b730d3c866"
+  "signed_timestamp_utc": "2026-10-30T15:03:53.118883+00:00",
+  "terminal_sha256": "47747470448a806d1c3dac1c52aa6f8f01277913edab4f7e2c9d41c388c818ce"
 }
