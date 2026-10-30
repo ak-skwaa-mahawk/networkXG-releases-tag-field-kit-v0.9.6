@@ -19,17 +19,17 @@ export XRPL_RPC_URL="https://xrplcluster.com"
 
 # 3. Launch Rust gRPC Backend (port 50051)
 echo "[+] Starting Rust gRPC Backend..."
-./target/release/isst-toft-backend > backend.log 2>&1 &
+nohup ./target/release/isst-toft-backend > backend.log 2>&1 &
 sleep 1
 
 # 4. Launch Sovereign Mesh HTTP Gateway (port 8080)
 echo "[+] Starting Sovereign Mesh Gateway..."
-python3 -u -c "from core.mesh.server import run_server; run_server(port=8080)" > /data/data/com.termux/files/home/Tordial-GS/mesh_server.log 2>&1 &
+nohup python3 -u -c "from core.mesh.server import run_server; run_server(port=8080)" > /data/data/com.termux/files/home/Tordial-GS/mesh_server.log 2>&1 &
 sleep 2
 
 # 5. Launch Mesh Heartbeat Keeper
 echo "[+] Starting Mesh Heartbeat Keeper..."
-python3 mesh_heartbeat_keeper.py > heartbeat.log 2>&1 &
+nohup python3 mesh_heartbeat_keeper.py > heartbeat.log 2>&1 &
 sleep 1
 
 # 6. Run Self-Diagnostics
