@@ -1,0 +1,13 @@
+{
+  "lineage": "DINJII_ZHUU_KWAA_0001",
+  "firm": "Two Mile Solutions LLC (Anchorage, Alaska)",
+  "node_id": "TORDIAL-EDGE-01",
+  "tailscale_ip": "100.113.13.48",
+  "git_commit": "570a6b1875a725df5d1a278f2360f98fe58113a7",
+  "xrpl_settlement_wallet": "rwnYLUsoBQX3ECa1A5bSKLdbPoHKnqf63J",
+  "initial_consumed_tx": "1DD1193CEB091F87749626D1F7592FE8A346A12EAA6963EAAEF733E6257D6D30",
+  "total_drops_settled": 20000000,
+  "sha256_proof": "6a74548d3bd240eb5a0ff4d81dced47eb506122ebf6cf90fa43eef309f67ada9",
+  "timestamp_utc": "2026-10-30T08:36:45.326673+00:00",
+  "status": "RAD_HARD_GLYPH_LOCKED_RUST"
+}
