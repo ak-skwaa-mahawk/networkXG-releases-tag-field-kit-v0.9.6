@@ -1,0 +1,19 @@
+{
+  "release_tag": "v0.9.9",
+  "commit": "5933de4",
+  "archive_filename": "fieldkit_v0.9.9_20261030_150221Z.tar.gz",
+  "archive_sha256": "1a51712388fd5de3b207844bcb9d00f443a89dcaaa6310daef4d74dc84cd34fe",
+  "timestamp_utc": "2026-10-30T15:02:21.531982+00:00",
+  "contents": [
+    "cascade_bridge.py",
+    "manifold_telemetry_bridge.py",
+    "test_router_harness.py",
+    "check_system.py",
+    "monitor_fieldkit.sh",
+    "proto/inference.proto",
+    "inference_pb2.py",
+    "inference_pb2_grpc.py",
+    "records/FIELD_KIT_LIVE_SEAL.json",
+    "records/DEPLOYMENT_SIGNOFF.json"
+  ]
+}
