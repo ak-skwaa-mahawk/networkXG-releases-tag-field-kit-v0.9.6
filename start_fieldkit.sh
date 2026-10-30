@@ -13,14 +13,19 @@ pkill -f "core.mesh.server" 2>/dev/null || true
 sleep 1
 
 # 2. Export Core Environment
+export CARGO_TARGET_DIR="/root/cargo_build"
 export PYTHONPATH="/data/data/com.termux/files/home/Tordial-GS:$PYTHONPATH"
 export XRPL_PRODUCTION_WALLET="rwnYLUsoBQX3ECa1A5bSKLdbPoHKnqf63J"
 export XRPL_RPC_URL="https://xrplcluster.com"
 
+# Also symlink / copy to local target/release for canonical reference
+mkdir -p "$DIR/target/release"
+cp -f /root/cargo_build/release/isst-toft-backend "$DIR/target/release/isst-toft-backend" 2>/dev/null || true
+
 # 3. Launch Rust gRPC Backend (port 50051)
 echo "[+] Starting Rust gRPC Backend..."
-nohup ./target/release/isst-toft-backend > backend.log 2>&1 &
-sleep 1
+nohup /root/cargo_build/release/isst-toft-backend > backend.log 2>&1 &
+sleep 2
 
 # 4. Launch Sovereign Mesh HTTP Gateway (port 8080)
 echo "[+] Starting Sovereign Mesh Gateway..."
