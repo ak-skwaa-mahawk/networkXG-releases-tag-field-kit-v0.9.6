@@ -62,9 +62,12 @@ class ISST_TOFT_CORE:
         }
 
 
-def bushrouter_handshake():
+def bushrouter_handshake(activation_context: str = "DEFAULT", proximity_meters: float = 0.0, **kwargs):
     core_instance = ISST_TOFT_CORE(version="0.9.6")
-    return core_instance.bushrouter_handshake()
+    res = core_instance.bushrouter_handshake()
+    res["context"] = activation_context
+    res["proximity_meters"] = proximity_meters
+    return res
 
 
 if __name__ == "__main__":
