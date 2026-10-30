@@ -3,3 +3,4 @@ backend.log
 __pycache__/
 *.pyc
 heartbeat.log
+watchdog.log
