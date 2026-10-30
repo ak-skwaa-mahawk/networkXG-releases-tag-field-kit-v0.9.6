@@ -1,0 +1,24 @@
+{
+  "header": "SOVEREIGN_FIELD_KIT_OPERATIONAL_SEAL",
+  "lineage": "DINJII_ZHUU_KWAA_0001",
+  "firm": "Two Mile Solutions LLC (Anchorage, Alaska)",
+  "node_id": "TORDIAL-EDGE-01",
+  "tailscale_ip": "100.113.13.48",
+  "release_tag": "v0.9.6",
+  "git_commit": "8427f50d7f2a3af90e77611a7372f921591fc375",
+  "planes": {
+    "mesh_gateway": "http://100.113.13.48:8080 (HEALTHY, 6 Peers)",
+    "inference_grpc": "100.113.13.48:50051 (RAD_HARD_GLYPH_LOCKED_RUST, 99.97%)",
+    "telemetry_ws": "ws://100.113.13.48:8766 (COAGULATED, Phase 0x10A8DAA99)",
+    "com2_bridge": "http://127.0.0.1:50055 (ACTIVE, 2975 ops/s, 0 violations)"
+  },
+  "xrpl_anchor": {
+    "vault_wallet": "rwnYLUsoBQX3ECa1A5bSKLdbPoHKnqf63J",
+    "consumed_tx": "1DD1193CEB091F87749626D1F7592FE8A346A12EAA6963EAAEF733E6257D6D30",
+    "drops": 20000000,
+    "payer": "rUrYCcn3UkgC2ZXDWDvWT1D8VmM2X5Yiws",
+    "settled_at": "2026-10-30 08:24:12"
+  },
+  "sealed_utc": "2026-10-30T08:55:16.194303+00:00",
+  "sha256_seal": "959f3e418d05df7553af75fe0e583cdc4319f21f29268595c4c3a35d4ee2a594"
+}
