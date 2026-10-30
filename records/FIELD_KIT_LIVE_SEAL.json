@@ -4,8 +4,8 @@
   "firm": "Two Mile Solutions LLC (Anchorage, Alaska)",
   "node_id": "TORDIAL-EDGE-01",
   "tailscale_ip": "100.113.13.48",
-  "release_tag": "v0.9.6",
-  "git_commit": "8427f50d7f2a3af90e77611a7372f921591fc375",
+  "release_tag": "v0.9.6-1-g77afb5e",
+  "git_commit": "77afb5e57dc9ebeb2a170012c709e92762c5f116",
   "planes": {
     "mesh_gateway": "http://100.113.13.48:8080 (HEALTHY, 6 Peers)",
     "inference_grpc": "100.113.13.48:50051 (RAD_HARD_GLYPH_LOCKED_RUST, 99.97%)",
@@ -19,6 +19,6 @@
     "payer": "rUrYCcn3UkgC2ZXDWDvWT1D8VmM2X5Yiws",
     "settled_at": "2026-10-30 08:24:12"
   },
-  "sealed_utc": "2026-10-30T08:55:16.194303+00:00",
-  "sha256_seal": "959f3e418d05df7553af75fe0e583cdc4319f21f29268595c4c3a35d4ee2a594"
+  "sealed_utc": "2026-10-30T08:55:46.337992+00:00",
+  "sha256_seal": "c5eb790f6bc143c4adae4209688566a9c3ee223df94d733b1a9cab690cf57c36"
 }
