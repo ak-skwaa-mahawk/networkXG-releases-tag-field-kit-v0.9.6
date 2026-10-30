@@ -2,20 +2,24 @@ mod model;
 mod glyph;
 
 use tonic::{transport::Server, Request, Response, Status};
-use proto::inference_server::{InferenceServer, Inference};
+pub mod proto {
+    tonic::include_proto!("issttoft");
+}
+
+use proto::inference_service_server::{InferenceServiceServer, InferenceService as InferenceServiceTrait};
 use proto::{GlyphRequest, GlyphResponse, PulseRequest, PulseResponse};
 
 #[derive(Default)]
 pub struct InferenceService;
 
 #[tonic::async_trait]
-impl Inference for InferenceService {
+impl InferenceServiceTrait for InferenceService {
     async fn encode_rad_hard_glyph(
         &self,
         request: Request<GlyphRequest>,
     ) -> Result<Response<GlyphResponse>, Status> {
         let req = request.into_inner();
-        let terrain = req.terrain_data;
+        let _terrain = req.terrain_data;
 
         // Pure Candle glyph generation
         let glyph = glyph::generate_glyph_waveform(7.83, 44100, 528.0, 3.2672536)
@@ -38,6 +42,8 @@ impl Inference for InferenceService {
             status: "RAD_HARD_GLYPH_LOCKED_RUST".to_string(),
             coherence: 99.97,
             message: "MAHS’I CHOO — gRPC Candle backend fused. Sovereign inference live.".to_string(),
+            quantum_layer: "ISST-TOFT-OCTAGONAL-E8".into(),
+            toroidal_pi_r: 3.204423,
         }))
     }
 
@@ -62,7 +68,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("🚀 ISST-TOFT Rust gRPC Backend v1.6.0 listening on {}", addr);
     Server::builder()
-        .add_service(InferenceServer::new(service))
+        .add_service(InferenceServiceServer::new(service))
         .serve(addr)
         .await?;
 

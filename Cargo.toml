@@ -7,7 +7,7 @@ license = "Apache-2.0"
 description = "Rad-hard Candle + gRPC inference backend for ISST-TOFT sovereign stack"
 
 [dependencies]
-candle-core = { version = "0.9", features = ["cuda"] }
+candle-core = { version = "0.9", features = [] }
 candle-nn = { version = "0.9" }
 tokio = { version = "1", features = ["full"] }
 tonic = "0.12"
