@@ -9,26 +9,30 @@ echo "=== Starting ISST-TOFT Sovereign Field Kit ==="
 # 1. Clear stale instances
 killall isst-toft-backend 2>/dev/null || true
 pkill -f "mesh_heartbeat_keeper.py" 2>/dev/null || true
+pkill -f "core.mesh.server" 2>/dev/null || true
+sleep 1
 
-# 2. Launch Rust gRPC backend (port 50051)
+# 2. Export Core Environment
+export PYTHONPATH="/data/data/com.termux/files/home/Tordial-GS:$PYTHONPATH"
+export XRPL_PRODUCTION_WALLET="rwnYLUsoBQX3ECa1A5bSKLdbPoHKnqf63J"
+export XRPL_RPC_URL="https://xrplcluster.com"
+
+# 3. Launch Rust gRPC Backend (port 50051)
 echo "[+] Starting Rust gRPC Backend..."
 ./target/release/isst-toft-backend > backend.log 2>&1 &
 sleep 1
 
-# 3. Launch Mesh Heartbeat Keeper
+# 4. Launch Sovereign Mesh HTTP Gateway (port 8080)
+echo "[+] Starting Sovereign Mesh Gateway..."
+python3 -u -c "from core.mesh.server import run_server; run_server(port=8080)" > /data/data/com.termux/files/home/Tordial-GS/mesh_server.log 2>&1 &
+sleep 2
+
+# 5. Launch Mesh Heartbeat Keeper
 echo "[+] Starting Mesh Heartbeat Keeper..."
 python3 mesh_heartbeat_keeper.py > heartbeat.log 2>&1 &
 sleep 1
 
-# 4. Verify bindings
-if grep -q "listening on \[::\]:50051" backend.log; then
-    echo "[✓] Rust Backend active on port 50051."
-else
-    echo "[!] Check backend.log:"
-    cat backend.log
-fi
-
-HEALTHY=$(curl -s http://127.0.0.1:8080/health 2>/dev/null | grep -o '"healthy_peers_count": [0-9]*' || echo "failed")
-echo "[✓] HTTP Gateway Status: $HEALTHY"
+# 6. Run Self-Diagnostics
+python3 check_system.py
 
 echo "=== Field Kit Active & Sealed ==="
