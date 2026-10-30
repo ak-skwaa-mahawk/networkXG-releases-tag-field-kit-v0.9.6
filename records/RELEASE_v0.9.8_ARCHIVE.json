@@ -1,0 +1,11 @@
+{
+  "release": "v0.9.8",
+  "commit": "4c1562548fe9912a66f7bc8c5fa4fa970e8a60ee",
+  "archive_filename": "fieldkit_v0.9.8_20261030_091141Z.tar.gz",
+  "archive_sha256": "57f1fa0ebe4103d39fd71a79cd28a2ce0e91df5cef6fdd47fbba757f72ac140d",
+  "lineage": "DINJII_ZHUU_KWAA_0001",
+  "firm": "Two Mile Solutions LLC (Anchorage, Alaska)",
+  "node": "TORDIAL-EDGE-01",
+  "tailscale_ip": "100.113.13.48",
+  "timestamp_utc": "2026-10-30T09:11:41Z"
+}
